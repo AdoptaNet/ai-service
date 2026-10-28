@@ -1,0 +1,583 @@
+{
+  "nombre": "adoptanet-recomendador",
+  "version": "1.0.0",
+  "fecha_entrenamiento": "2026-10-22",
+  "dataset": "Sintético (data/, generador_datos_sinteticos.py): 5000 adoptantes, 36 mascotas. Entrenamiento final con train + val (85 %), métricas en test (15 %).",
+  "archivos": {
+    "parametros": "parametros.npz",
+    "catalogo": "catalogo.csv"
+  },
+  "niveles": {
+    "0": "Reglas duras de bienestar animal (fuera del ML): excluyen el par",
+    "1a": "Motor EASE con historial demográfico (cold start de adoptante)",
+    "1b": "Compatibilidad: logística ordinal P(r>=1) + P(r>=2) sobre features del par",
+    "2": "score = gamma * minmax(compatibilidad) + (1 - gamma) * motor",
+    "3": "+ eta_estancia * percentil(días en refugio); disponibles; reparto de carga en lote"
+  },
+  "hiperparametros": {
+    "motor": {
+      "engine": "ease",
+      "reg": 1.0,
+      "beta": 0.0,
+      "alpha": 1.0,
+      "lambda_demo": 0.1,
+      "neg_weight": 0.0,
+      "pos_threshold": 2
+    },
+    "C": 0.01,
+    "gamma": 0.9,
+    "peso_sesgo": 0.5,
+    "eta_estancia": 0.2,
+    "eta_carga": 0.0,
+    "umbral_minimo": 0.35,
+    "k": 5
+  },
+  "motor": {
+    "items": [
+      "pet_000",
+      "pet_001",
+      "pet_002",
+      "pet_003",
+      "pet_004",
+      "pet_005",
+      "pet_006",
+      "pet_007",
+      "pet_008",
+      "pet_009",
+      "pet_010",
+      "pet_011",
+      "pet_012",
+      "pet_013",
+      "pet_014",
+      "pet_015",
+      "pet_016",
+      "pet_017",
+      "pet_018",
+      "pet_019",
+      "pet_020",
+      "pet_021",
+      "pet_022",
+      "pet_023",
+      "pet_024",
+      "pet_025",
+      "pet_026",
+      "pet_027",
+      "pet_028",
+      "pet_029",
+      "pet_030",
+      "pet_031",
+      "pet_032",
+      "pet_033",
+      "pet_034",
+      "pet_035"
+    ],
+    "features_mascota": [
+      "especie_gato",
+      "especie_perro",
+      "sexo_hembra",
+      "sexo_macho",
+      "categoria_edad_adulto",
+      "categoria_edad_cachorro",
+      "categoria_edad_joven",
+      "categoria_edad_senior",
+      "tamano_grande",
+      "tamano_mediano",
+      "tamano_pequeno",
+      "tipo_pelaje_corto",
+      "tipo_pelaje_largo",
+      "tipo_pelaje_medio",
+      "nivel_energia_1",
+      "nivel_energia_2",
+      "nivel_energia_3",
+      "nivel_energia_4",
+      "nivel_energia_5",
+      "sociable_ninos_alto",
+      "sociable_ninos_bajo",
+      "sociable_ninos_desconocido",
+      "sociable_ninos_medio",
+      "sociable_perros_alto",
+      "sociable_perros_bajo",
+      "sociable_perros_desconocido",
+      "sociable_perros_medio",
+      "sociable_gatos_alto",
+      "sociable_gatos_bajo",
+      "sociable_gatos_desconocido",
+      "sociable_gatos_medio",
+      "sociable_desconocidos_alto",
+      "sociable_desconocidos_bajo",
+      "sociable_desconocidos_medio",
+      "nivel_ladrido_alto",
+      "nivel_ladrido_bajo",
+      "nivel_ladrido_medio",
+      "entrenamiento_basico_completo",
+      "entrenamiento_basico_nulo",
+      "entrenamiento_basico_parcial",
+      "estado_salud_cronica",
+      "estado_salud_necesidad_especial",
+      "estado_salud_sano",
+      "zona_climatica_refugio_costa",
+      "zona_climatica_refugio_selva",
+      "zona_climatica_refugio_sierra",
+      "esterilizado",
+      "vacunas_completas",
+      "req_area_exterior",
+      "req_cercado",
+      "req_sin_ninos"
+    ],
+    "features_adoptante": [
+      "departamento_ancash",
+      "departamento_arequipa",
+      "departamento_cajamarca",
+      "departamento_callao",
+      "departamento_cusco",
+      "departamento_ica",
+      "departamento_junin",
+      "departamento_la libertad",
+      "departamento_lambayeque",
+      "departamento_lima",
+      "departamento_loreto",
+      "departamento_piura",
+      "departamento_puno",
+      "departamento_san martin",
+      "departamento_ucayali",
+      "zona_climatica_costa",
+      "zona_climatica_selva",
+      "zona_climatica_sierra",
+      "tipo_vivienda_casa",
+      "tipo_vivienda_casa_terreno",
+      "tipo_vivienda_departamento",
+      "nivel_actividad_activo",
+      "nivel_actividad_moderado",
+      "nivel_actividad_sedentario",
+      "experiencia_previa_alguna",
+      "experiencia_previa_amplia",
+      "experiencia_previa_ninguna",
+      "presupuesto_mensual_alto",
+      "presupuesto_mensual_bajo",
+      "presupuesto_mensual_medio",
+      "tiempo_adiestramiento_alta",
+      "tiempo_adiestramiento_baja",
+      "tiempo_adiestramiento_media",
+      "pref_especie_gato",
+      "pref_especie_indistinto",
+      "pref_especie_perro",
+      "pref_sexo_hembra",
+      "pref_sexo_indistinto",
+      "pref_sexo_macho",
+      "pref_energia_1",
+      "pref_energia_2",
+      "pref_energia_3",
+      "pref_energia_4",
+      "pref_energia_5",
+      "tenencia_propia_0",
+      "tenencia_propia_1",
+      "permiso_mascotas_0",
+      "permiso_mascotas_1",
+      "area_exterior_0",
+      "area_exterior_1",
+      "cercado_seguro_0",
+      "cercado_seguro_1",
+      "presencia_ninos_0",
+      "presencia_ninos_1",
+      "otras_mascotas_perro_0",
+      "otras_mascotas_perro_1",
+      "otras_mascotas_gato_0",
+      "otras_mascotas_gato_1",
+      "apertura_nec_especiales_0",
+      "apertura_nec_especiales_1",
+      "apertura_senior_0",
+      "apertura_senior_1",
+      "m2_exterior_0",
+      "m2_exterior_1-30",
+      "m2_exterior_31-80",
+      "m2_exterior_80+",
+      "horas_fuera_0-4",
+      "horas_fuera_13+",
+      "horas_fuera_5-8",
+      "horas_fuera_9-12",
+      "integrantes_1",
+      "integrantes_2-3",
+      "integrantes_4+",
+      "edad_ninos_0-5",
+      "edad_ninos_12+",
+      "edad_ninos_6-11",
+      "edad_ninos_sin_ninos",
+      "pref_tamano_grande",
+      "pref_tamano_indistinto",
+      "pref_tamano_mediano",
+      "pref_tamano_pequeno",
+      "pref_edad_adulto",
+      "pref_edad_cachorro",
+      "pref_edad_indistinto",
+      "pref_edad_joven",
+      "pref_edad_senior"
+    ]
+  },
+  "compatibilidad": {
+    "features": [
+      "energia_vs_actividad",
+      "energia_vs_preferida",
+      "talla_vs_espacio",
+      "grande_sin_exterior",
+      "demanda_vs_disponibilidad",
+      "deficit_atencion",
+      "dificultad_sobre_experiencia",
+      "sin_entrenamiento_poco_tiempo",
+      "hay_ninos",
+      "ninos_x_sociable",
+      "ninos_pequenos_x_energia",
+      "hay_perro",
+      "perro_x_sociable",
+      "hay_gato",
+      "gato_x_sociable",
+      "mismo_departamento",
+      "misma_zona",
+      "especie_coincide",
+      "especie_no_coincide",
+      "tamano_coincide",
+      "tamano_no_coincide",
+      "edad_coincide",
+      "edad_no_coincide",
+      "sexo_coincide",
+      "sexo_no_coincide",
+      "senior_x_apertura",
+      "salud_x_apertura",
+      "salud_x_presupuesto_bajo",
+      "ladrido_en_departamento",
+      "es_cachorro",
+      "es_pequeno",
+      "es_senior",
+      "salud_cronica",
+      "necesidad_especial",
+      "viola_regla_dura",
+      "posicion"
+    ],
+    "posicion_media": 6.5
+  },
+  "reglas_duras": [
+    "La vivienda no permite mascotas",
+    "Requiere área exterior y el hogar no tiene",
+    "Requiere cercado seguro y el hogar no tiene",
+    "No apta para hogares con niños",
+    "No se lleva con perros y el hogar tiene perro",
+    "No se lleva con gatos y el hogar tiene gato",
+    "Necesidad especial sin disposición del adoptante"
+  ],
+  "esquema_adoptante": {
+    "departamento": {
+      "tipo": "texto"
+    },
+    "zona_climatica": {
+      "tipo": "categoria",
+      "valores": [
+        "costa",
+        "sierra",
+        "selva"
+      ]
+    },
+    "tipo_vivienda": {
+      "tipo": "categoria",
+      "valores": [
+        "departamento",
+        "casa",
+        "casa_terreno"
+      ]
+    },
+    "tenencia_propia": {
+      "tipo": "binario"
+    },
+    "permiso_mascotas": {
+      "tipo": "binario"
+    },
+    "area_exterior": {
+      "tipo": "binario"
+    },
+    "m2_exterior": {
+      "tipo": "numero",
+      "min": 0,
+      "nulo": true
+    },
+    "cercado_seguro": {
+      "tipo": "binario"
+    },
+    "n_integrantes": {
+      "tipo": "entero",
+      "min": 1
+    },
+    "presencia_ninos": {
+      "tipo": "binario"
+    },
+    "edad_min_ninos": {
+      "tipo": "entero",
+      "min": 0,
+      "max": 17,
+      "nulo": true,
+      "nota": "obligatorio si hay niños"
+    },
+    "otras_mascotas_perro": {
+      "tipo": "binario"
+    },
+    "otras_mascotas_gato": {
+      "tipo": "binario"
+    },
+    "horas_fuera_dia": {
+      "tipo": "numero",
+      "min": 0,
+      "max": 24
+    },
+    "nivel_actividad": {
+      "tipo": "categoria",
+      "valores": [
+        "sedentario",
+        "moderado",
+        "activo"
+      ]
+    },
+    "experiencia_previa": {
+      "tipo": "categoria",
+      "valores": [
+        "ninguna",
+        "alguna",
+        "amplia"
+      ]
+    },
+    "presupuesto_mensual": {
+      "tipo": "categoria",
+      "valores": [
+        "bajo",
+        "medio",
+        "alto"
+      ]
+    },
+    "tiempo_adiestramiento": {
+      "tipo": "categoria",
+      "valores": [
+        "baja",
+        "media",
+        "alta"
+      ]
+    },
+    "pref_especie": {
+      "tipo": "categoria",
+      "valores": [
+        "perro",
+        "gato",
+        "indistinto"
+      ]
+    },
+    "pref_tamano": {
+      "tipo": "multiple",
+      "valores": [
+        "pequeno",
+        "mediano",
+        "grande"
+      ]
+    },
+    "pref_edad": {
+      "tipo": "multiple",
+      "valores": [
+        "cachorro",
+        "joven",
+        "adulto",
+        "senior"
+      ]
+    },
+    "pref_sexo": {
+      "tipo": "categoria",
+      "valores": [
+        "macho",
+        "hembra",
+        "indistinto"
+      ]
+    },
+    "pref_energia": {
+      "tipo": "entero",
+      "min": 1,
+      "max": 5
+    },
+    "apertura_nec_especiales": {
+      "tipo": "binario"
+    },
+    "apertura_senior": {
+      "tipo": "binario"
+    }
+  },
+  "esquema_mascota": {
+    "especie": {
+      "tipo": "categoria",
+      "valores": [
+        "perro",
+        "gato"
+      ]
+    },
+    "sexo": {
+      "tipo": "categoria",
+      "valores": [
+        "macho",
+        "hembra"
+      ]
+    },
+    "categoria_edad": {
+      "tipo": "categoria",
+      "valores": [
+        "cachorro",
+        "joven",
+        "adulto",
+        "senior"
+      ]
+    },
+    "tamano": {
+      "tipo": "categoria",
+      "valores": [
+        "pequeno",
+        "mediano",
+        "grande"
+      ]
+    },
+    "tipo_pelaje": {
+      "tipo": "categoria",
+      "valores": [
+        "corto",
+        "medio",
+        "largo"
+      ]
+    },
+    "nivel_energia": {
+      "tipo": "entero",
+      "min": 1,
+      "max": 5
+    },
+    "sociable_ninos": {
+      "tipo": "categoria",
+      "valores": [
+        "bajo",
+        "medio",
+        "alto",
+        "desconocido"
+      ]
+    },
+    "sociable_perros": {
+      "tipo": "categoria",
+      "valores": [
+        "bajo",
+        "medio",
+        "alto",
+        "desconocido"
+      ]
+    },
+    "sociable_gatos": {
+      "tipo": "categoria",
+      "valores": [
+        "bajo",
+        "medio",
+        "alto",
+        "desconocido"
+      ]
+    },
+    "sociable_desconocidos": {
+      "tipo": "categoria",
+      "valores": [
+        "bajo",
+        "medio",
+        "alto"
+      ]
+    },
+    "nivel_ladrido": {
+      "tipo": "categoria",
+      "valores": [
+        "bajo",
+        "medio",
+        "alto"
+      ]
+    },
+    "entrenamiento_basico": {
+      "tipo": "categoria",
+      "valores": [
+        "nulo",
+        "parcial",
+        "completo"
+      ]
+    },
+    "estado_salud": {
+      "tipo": "categoria",
+      "valores": [
+        "sano",
+        "cronica",
+        "necesidad_especial"
+      ]
+    },
+    "esterilizado": {
+      "tipo": "binario"
+    },
+    "vacunas_completas": {
+      "tipo": "binario"
+    },
+    "departamento_refugio": {
+      "tipo": "texto"
+    },
+    "zona_climatica_refugio": {
+      "tipo": "categoria",
+      "valores": [
+        "costa",
+        "sierra",
+        "selva"
+      ]
+    },
+    "req_area_exterior": {
+      "tipo": "binario"
+    },
+    "req_cercado": {
+      "tipo": "binario"
+    },
+    "req_sin_ninos": {
+      "tipo": "binario"
+    },
+    "dias_en_refugio": {
+      "tipo": "entero",
+      "min": 0
+    }
+  },
+  "ejemplo_adoptante": {
+    "departamento": "lima",
+    "zona_climatica": "costa",
+    "altitud_msnm": 150,
+    "tipo_vivienda": "departamento",
+    "tenencia_propia": 0,
+    "permiso_mascotas": 1,
+    "area_exterior": 0,
+    "m2_exterior": 0.0,
+    "cercado_seguro": 1,
+    "n_integrantes": 3,
+    "presencia_ninos": 1,
+    "edad_min_ninos": 7,
+    "otras_mascotas_perro": 0,
+    "otras_mascotas_gato": 1,
+    "horas_fuera_dia": 9.0,
+    "nivel_actividad": "moderado",
+    "experiencia_previa": "alguna",
+    "presupuesto_mensual": "medio",
+    "tiempo_adiestramiento": "media",
+    "pref_especie": "perro",
+    "pref_tamano": "pequeno|mediano",
+    "pref_edad": "joven|adulto",
+    "pref_sexo": "indistinto",
+    "pref_energia": 3,
+    "apertura_nec_especiales": 0,
+    "apertura_senior": 0
+  },
+  "metricas_test": {
+    "NDCG@5": 0.8353,
+    "Precision@5": 0.4275,
+    "Precision@5 norm": 0.8689,
+    "AUC": 0.8748,
+    "Spearman latente": 0.6931,
+    "adoptantes": 750.0,
+    "Gini exposición": 0.5554,
+    "Cobertura %": 100.0,
+    "% expo. cachorros": 34.7801,
+    "% expo. senior": 16.9929,
+    "% expo. salud no sano": 17.2766,
+    "Carga máx. (× esperado)": 4.2077,
+    "% top-k inviable": 0.0
+  }
+}

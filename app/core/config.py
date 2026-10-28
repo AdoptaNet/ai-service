@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     MODEL_DIR: Path = Path(__file__).resolve().parent.parent / "models" / "vision"
     MODEL_FILENAME: str = "adoptanet_vision_dino.onnx"
     CONFIG_FILENAME: str = "model_config.json"
+    RECOMMENDATION_MODEL_DIR: Path = Path(__file__).resolve().parent.parent / "models" / "recommendations"
 
     # Thresholds
     MIN_SPECIES_CONFIDENCE: float = 0.80

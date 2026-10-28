@@ -1,0 +1,39 @@
+pet_id,especie,sexo,categoria_edad,tamano,tipo_pelaje,nivel_energia,sociable_ninos,sociable_perros,sociable_gatos,sociable_desconocidos,nivel_ladrido,entrenamiento_basico,estado_salud,esterilizado,vacunas_completas,departamento_refugio,zona_climatica_refugio,req_area_exterior,req_cercado,req_sin_ninos,dias_en_refugio,edad_meses,peso_kg
+pet_000,gato,macho,cachorro,pequeno,corto,4,alto,bajo,alto,alto,bajo,parcial,sano,1,0,lima,costa,0,1,0,132,6.0,2.2
+pet_001,perro,macho,adulto,pequeno,corto,4,bajo,bajo,medio,bajo,medio,completo,necesidad_especial,1,1,loreto,selva,0,0,0,151,85.0,7.8
+pet_002,gato,hembra,senior,mediano,corto,2,desconocido,alto,medio,medio,bajo,parcial,sano,0,0,lima,costa,0,1,0,362,162.0,20.7
+pet_003,gato,macho,cachorro,pequeno,medio,5,alto,desconocido,medio,medio,bajo,completo,sano,1,0,lima,costa,0,0,0,220,6.0,3.0
+pet_004,perro,hembra,adulto,mediano,corto,4,medio,bajo,desconocido,medio,alto,nulo,sano,1,1,san martin,selva,0,0,0,150,74.0,16.2
+pet_005,gato,hembra,joven,mediano,largo,3,desconocido,alto,medio,alto,bajo,nulo,sano,1,1,lima,costa,0,0,0,102,30.0,10.4
+pet_006,gato,hembra,cachorro,pequeno,largo,3,alto,bajo,alto,medio,bajo,parcial,sano,1,1,lima,costa,0,0,0,141,4.0,6.7
+pet_007,gato,hembra,joven,pequeno,corto,5,alto,alto,desconocido,alto,bajo,completo,sano,1,1,lima,costa,0,1,0,176,31.0,4.0
+pet_008,perro,hembra,cachorro,mediano,corto,5,desconocido,alto,desconocido,alto,medio,nulo,necesidad_especial,1,1,lima,costa,1,0,0,141,3.0,17.6
+pet_009,perro,hembra,senior,pequeno,corto,2,alto,alto,medio,medio,medio,parcial,sano,1,0,lima,costa,0,0,0,381,163.0,7.1
+pet_010,perro,hembra,joven,mediano,medio,4,alto,desconocido,medio,alto,alto,parcial,necesidad_especial,1,1,lima,costa,0,1,0,497,31.0,19.0
+pet_011,gato,hembra,adulto,pequeno,medio,4,bajo,alto,alto,medio,bajo,nulo,cronica,1,1,lima,costa,1,1,1,641,50.0,2.8
+pet_012,gato,macho,joven,pequeno,medio,3,bajo,bajo,bajo,alto,bajo,parcial,sano,1,1,lima,costa,0,0,1,397,27.0,8.4
+pet_013,gato,hembra,adulto,pequeno,corto,2,bajo,bajo,alto,medio,bajo,completo,cronica,0,0,piura,costa,0,0,1,204,86.0,3.6
+pet_014,perro,hembra,adulto,pequeno,medio,3,alto,desconocido,desconocido,medio,medio,parcial,sano,0,1,lambayeque,costa,0,0,0,183,89.0,2.3
+pet_015,perro,macho,cachorro,pequeno,corto,4,medio,desconocido,bajo,medio,medio,nulo,sano,1,1,lima,costa,1,1,0,148,8.0,5.9
+pet_016,perro,hembra,joven,mediano,medio,4,alto,alto,bajo,bajo,bajo,completo,cronica,1,1,lima,costa,0,0,0,229,15.0,13.8
+pet_017,perro,hembra,joven,pequeno,corto,4,desconocido,alto,desconocido,medio,bajo,nulo,cronica,0,1,lima,costa,0,1,0,218,28.0,7.8
+pet_018,gato,hembra,senior,pequeno,medio,2,medio,alto,bajo,alto,bajo,completo,sano,1,1,ucayali,selva,0,0,0,261,161.0,7.7
+pet_019,gato,hembra,cachorro,pequeno,largo,5,alto,bajo,bajo,medio,bajo,nulo,sano,1,1,ica,costa,0,0,0,355,8.0,4.2
+pet_020,gato,macho,joven,pequeno,corto,4,alto,alto,bajo,bajo,bajo,parcial,sano,0,1,lima,costa,0,1,0,209,22.0,8.7
+pet_021,perro,hembra,joven,mediano,medio,5,medio,bajo,desconocido,medio,medio,parcial,cronica,1,1,lima,costa,0,0,0,96,31.0,12.8
+pet_022,gato,macho,adulto,mediano,corto,1,desconocido,bajo,bajo,bajo,bajo,nulo,sano,0,1,lima,costa,0,1,0,312,76.0,15.7
+pet_023,gato,hembra,cachorro,mediano,medio,4,medio,alto,alto,bajo,bajo,completo,sano,1,1,lima,costa,1,0,0,195,7.0,12.3
+pet_024,gato,hembra,cachorro,pequeno,corto,4,bajo,alto,desconocido,alto,bajo,nulo,sano,1,1,la libertad,costa,0,0,0,235,11.0,8.6
+pet_025,perro,macho,joven,grande,largo,3,bajo,alto,alto,medio,bajo,nulo,sano,1,1,lima,costa,0,0,0,319,14.0,25.8
+pet_026,perro,macho,joven,pequeno,corto,3,desconocido,desconocido,alto,medio,medio,nulo,sano,1,1,lima,costa,0,0,0,212,19.0,2.3
+pet_027,perro,macho,adulto,mediano,largo,3,medio,alto,bajo,medio,alto,parcial,cronica,1,1,lima,costa,0,0,0,340,44.0,14.7
+pet_028,perro,macho,cachorro,mediano,medio,5,desconocido,bajo,bajo,bajo,alto,completo,sano,1,1,arequipa,sierra,1,0,0,32,5.0,21.9
+pet_029,gato,macho,cachorro,pequeno,medio,3,alto,alto,medio,medio,bajo,completo,sano,0,1,lima,costa,0,0,0,233,6.0,8.2
+pet_030,gato,macho,senior,pequeno,medio,2,desconocido,alto,desconocido,alto,bajo,nulo,sano,1,1,ica,costa,0,1,0,146,162.0,7.2
+pet_031,gato,macho,adulto,pequeno,medio,3,alto,bajo,bajo,medio,bajo,parcial,cronica,1,1,lima,costa,0,0,0,178,59.0,8.2
+pet_032,perro,macho,senior,pequeno,largo,2,alto,bajo,alto,alto,bajo,nulo,cronica,0,0,san martin,selva,0,0,0,352,151.0,8.3
+pet_033,perro,hembra,senior,mediano,corto,3,medio,bajo,alto,medio,bajo,parcial,sano,0,1,lima,costa,0,0,0,706,112.0,15.7
+pet_034,perro,macho,adulto,mediano,medio,4,medio,alto,alto,medio,medio,completo,sano,1,1,ica,costa,0,1,0,72,96.0,13.1
+pet_035,perro,macho,adulto,mediano,corto,4,desconocido,medio,bajo,alto,medio,parcial,sano,1,1,san martin,selva,0,0,0,163,53.0,19.0
+521b321c-e974-4380-9c52-f9200a4c28f6,perro,hembra,joven,mediano,corto,3,desconocido,desconocido,desconocido,medio,bajo,nulo,sano,0,0,lima,costa,0,0,0,30,,
+13dc8350-8bb0-4288-9edc-6d347385a127,perro,macho,adulto,grande,corto,3,desconocido,desconocido,desconocido,medio,bajo,nulo,sano,0,0,lima,costa,1,0,0,30,,
