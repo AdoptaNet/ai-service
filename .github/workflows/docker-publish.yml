@@ -57,3 +57,20 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Trigger Render Redeploy Webhook
+        if: ${{ secrets.RENDER_DEPLOY_HOOK_URL != '' || secrets.RENDER_DEPLOY_HOOK != '' || secrets.RENDER_WEBHOOK_URL != '' || secrets.RENDER_WEBHOOK != '' }}
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL || secrets.RENDER_DEPLOY_HOOK || secrets.RENDER_WEBHOOK_URL || secrets.RENDER_WEBHOOK }}
+        run: |
+          echo "Disparando despliegue automático en Render vía Webhook Deploy Hook..."
+          response=$(curl -s -w "\nHTTP_STATUS:%{http_code}" -X POST "${RENDER_DEPLOY_HOOK}")
+          http_code=$(echo "$response" | grep "HTTP_STATUS" | cut -d':' -f2)
+          body=$(echo "$response" | grep -v "HTTP_STATUS")
+          echo "Respuesta de Render: $body"
+          if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+            echo "Despliegue disparado exitosamente en Render (HTTP $http_code)."
+          else
+            echo "Error o respuesta inesperada al invocar Deploy Hook de Render (HTTP $http_code)."
+            exit 1
+          fi
